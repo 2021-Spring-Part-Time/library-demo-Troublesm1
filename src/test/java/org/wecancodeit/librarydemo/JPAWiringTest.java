@@ -32,7 +32,7 @@ public class JPAWiringTest {
         entityManager.flush();
         entityManager.clear();
 
-        Optional<Campus> retrievedCampusOpt = campusRepo.findAllById(testCampus.getId());
+        Optional<Campus> retrievedCampusOpt = campusRepo.findById(testCampus.getId());
 
     }
 }
