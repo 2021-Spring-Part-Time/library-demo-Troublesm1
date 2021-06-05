@@ -12,6 +12,10 @@ public class JPAWiringTest {
     private TestEntityManager entityManager;
     @Autowired
     private CampusRepository campusRepo;
+    @Autowired
+    private AuthorRepository authorRepo;
+    @Autowired
+    private BookRepository bookRepo;
 
     @Test
     public void CampusShouldHaveAListOfBooks() {
