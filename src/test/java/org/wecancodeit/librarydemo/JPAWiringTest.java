@@ -7,6 +7,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+
 @DataJpaTest
 public class JPAWiringTest {
 
@@ -35,6 +38,6 @@ public class JPAWiringTest {
         Optional<Campus> retrievedCampusOpt = campusRepo.findById(testCampus.getId());
         Campus retrievedCampus = retrievedCampusOpt.get();
         Book retrievedBook = bookRepo.findById(testBook.getId()).get();
-
+        assertThat(retrievedCampus.getBooks()).contains(testBook);
     }
 }
