@@ -4,4 +4,8 @@ public class Book {
 
     public Book(String title, String description, Campus testCampus, Author testAuthor1) {
     }
+
+    public Long getId() {
+        return null;
+    }
 }

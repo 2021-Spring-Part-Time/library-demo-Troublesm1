@@ -22,7 +22,7 @@ public class JPAWiringTest {
     @Test
     public void CampusShouldHaveAListOfBooks() {
         Campus testCampus = new Campus("Test Location");
-        Author testAuthor1 = new Author("Test firstName", "Test lastName  ");
+        Author testAuthor1 = new Author("Test firstName", "Test lastName");
         Book testBook = new Book("Title", "Description", testCampus, testAuthor1);
 
         campusRepo.save(testCampus);
@@ -33,6 +33,8 @@ public class JPAWiringTest {
         entityManager.clear();
 
         Optional<Campus> retrievedCampusOpt = campusRepo.findById(testCampus.getId());
+        Campus retrievedCampus = retrievedCampusOpt.get();
+        Book retrievedBook = bookRepo.findById(testBook.getId()).get();
 
     }
 }
