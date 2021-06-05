@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
+import java.util.Optional;
+
 @DataJpaTest
 public class JPAWiringTest {
 
@@ -23,7 +25,14 @@ public class JPAWiringTest {
         Author testAuthor1 = new Author("Test firstName", "Test lastName  ");
         Book testBook = new Book("Title", "Description", testCampus, testAuthor1);
 
+        campusRepo.save(testCampus);
         authorRepo.save(testAuthor1);
+        bookRepo.save(testBook);
+
+        entityManager.flush();
+        entityManager.clear();
+
+        Optional<Campus> retrievedCampusOpt = campusRepo.findAllById(testCampus.getId());
 
     }
 }
