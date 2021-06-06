@@ -1,7 +1,18 @@
 package org.wecancodeit.librarydemo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Author {
 
-    public Author(String test_firstName, String test_lastName__) {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String firstName;
+    private String lastName;
+
+    public Author(String firstName, String lastName) {
     }
 }
