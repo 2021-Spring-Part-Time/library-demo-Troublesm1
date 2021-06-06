@@ -3,6 +3,7 @@ package org.wecancodeit.librarydemo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Collection;
 
 @Entity
@@ -13,6 +14,8 @@ public class Campus {
     @GeneratedValue
     private Long id;
     private String location;
+    @OneToMany
+    private Collection<Book> books;
 
     public Long getId() {
         return id;
@@ -26,6 +29,6 @@ public class Campus {
     }
 
     public Collection<Book> getBooks() {
-        return null;
+        return books;
     }
 }

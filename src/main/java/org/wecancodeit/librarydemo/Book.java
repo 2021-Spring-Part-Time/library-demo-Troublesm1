@@ -11,6 +11,7 @@ public class Book {
     @Id
     @GeneratedValue
     private Long id;
+    private String title;
     private String description;
     @ManyToOne
     private Campus campus;
@@ -32,4 +33,5 @@ public class Book {
         this.authors= new ArrayList<>(Arrays.asList(authors));
 
     }
+
 }
