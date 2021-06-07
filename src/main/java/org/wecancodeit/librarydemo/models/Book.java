@@ -22,6 +22,9 @@ public class Book {
     public Long getId() {
         return id;
     }
+    public Collection<Author> getAuthors() {
+        return authors;
+    }
 
     public Book () {
 
@@ -47,4 +50,5 @@ public class Book {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
