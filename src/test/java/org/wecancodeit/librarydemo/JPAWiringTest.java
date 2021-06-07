@@ -7,6 +7,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.wecancodeit.librarydemo.models.Author;
 import org.wecancodeit.librarydemo.models.Book;
 import org.wecancodeit.librarydemo.models.Campus;
+import org.wecancodeit.librarydemo.repositories.AuthorRepository;
+import org.wecancodeit.librarydemo.repositories.BookRepository;
+import org.wecancodeit.librarydemo.repositories.CampusRepository;
 
 import java.util.Optional;
 
