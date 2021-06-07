@@ -12,6 +12,9 @@ public class Author {
     private Long id;
     private String firstName;
     private String lastName;
+    public Long getId() {
+        return id;
+    }
 
     public Author() {
 
@@ -21,4 +24,5 @@ public class Author {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
 }

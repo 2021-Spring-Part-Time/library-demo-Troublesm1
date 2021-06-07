@@ -51,4 +51,26 @@ public class JPAWiringTest {
         //Book retrievedBook = bookRepo.findById(testBook.getId()).get();
         assertThat(retrievedCampus.getBooks()).contains(testBook);
     }
+    @Test
+    public void BooksShouldBeAbleToHaveMultipleAuthors() {
+        Campus testCampus = new Campus("Test Location");
+        Author testAuthor1 = new Author("Test firstName", "Test lastName");
+        Author testAuthor2 = new Author("Test firstName2", "Test lastName2");
+        Book testBook1 = new Book("Title", "Description", testCampus, testAuthor1, testAuthor2);
+        Book testBook2 = new Book("Title", "Description", testCampus, testAuthor1);
+        Book testBook3 = new Book("Title", "Description", testCampus, testAuthor2);
+        campusRepo.save(testCampus);
+        authorRepo.save(testAuthor1);
+        authorRepo.save(testAuthor2);
+        bookRepo.save(testBook1);
+        bookRepo.save(testBook2);
+        bookRepo.save(testBook3);
+
+        entityManager.flush();
+        entityManager.clear();
+
+        Book retrieveBook = bookRepo.findById(testBook1.getId()).get();
+        Author retrieveAuthor1 = authorRepo.findById(testAuthor1.getId()).get();
+
+    }
 }
