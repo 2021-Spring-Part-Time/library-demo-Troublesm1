@@ -1,8 +1,7 @@
 package org.wecancodeit.librarydemo;
 
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.Optional;
+import org.wecancodeit.librarydemo.models.Campus;
 
 public interface CampusRepository extends CrudRepository<Campus, Long> {
 
