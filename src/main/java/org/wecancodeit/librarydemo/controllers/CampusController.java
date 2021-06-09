@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.librarydemo.repositories.CampusRepository;
 
 import javax.annotation.Resource;
-import javax.annotation.Resources;
 
 @Controller
 public class CampusController {
