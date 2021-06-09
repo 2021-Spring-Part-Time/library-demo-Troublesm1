@@ -19,6 +19,14 @@ public class Author {
     @ManyToMany(mappedBy = "authors")
     private Collection<Book> books;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     public Long getId() {
         return id;
     }
