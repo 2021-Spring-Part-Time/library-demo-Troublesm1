@@ -3,6 +3,9 @@ package org.wecancodeit.librarydemo.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 public class Author {
@@ -12,12 +15,19 @@ public class Author {
     private Long id;
     private String firstName;
     private String lastName;
+
+    @ManyToMany(mappedBy = "authors")
+    private Collection<Book> books;
+
     public Long getId() {
         return id;
     }
 
-    public Author() {
+    public Collection<Book> getBooks() {
+        return books;
+    }
 
+    public Author() {
     }
 
     public Author(String firstName, String lastName) {
@@ -25,4 +35,16 @@ public class Author {
         this.lastName = lastName;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(id, author.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
