@@ -27,7 +27,7 @@ public class WebLayerTest {
     @Test
     public void CampusesShouldBeOkAndReturnCampusesViewWithCampusesModelAttribute () throws Exception {
         mockMvc.perform(get("/campuses")).andDo(print()).andExpect(status().isOk())
-                .andExpect(view().name("/campusesView")).andExpect(model().attributeExists("campuses"));
+                .andExpect(view().name("campusesView")).andExpect(model().attributeExists("campuses"));
     }
 }
 
