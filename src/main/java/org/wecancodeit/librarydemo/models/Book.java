@@ -22,9 +22,21 @@ public class Book {
     public Long getId() {
         return id;
     }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Campus getCampus() {
+        return campus;
+    }
     public Collection<Author> getAuthors() {
         return authors;
     }
+
 
     public Book () {
 
